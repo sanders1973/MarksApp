@@ -15,7 +15,7 @@ def main():
     col1, col2 = st.columns(2)
 
     with col1:
-        text1 = st.text_input("Text Box 1", text1)
+        text1 = st.text_area("Text Box 1", text1,height=300)
         text3 = st.text_input("Text Box 3", text3)
 
     with col2:
