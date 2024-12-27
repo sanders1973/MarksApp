@@ -1,31 +1,31 @@
 import streamlit as st
-
-import requests
-
-def get_weather(api_key, location):
-    url = f"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}&units=metric"
-    response = requests.get(url)
-    if response.status_code == 200:
-        data = response.json()
-        temperature = data["main"]["temp"]
-        return temperature
-    else:
-        st.error("Error: Could not retrieve weather data.")
-        return None
+from streamlit_local_storage import get_local_storage, set_local_storage
 
 def main():
-    st.title("Current Temperature Checker")
+    st.title("Text Boxes with Local Storage")
 
-    api_key = st.text_input("Enter your OpenWeatherMap API Key:", type="password")
-    location = st.text_input("Enter your location (e.g., city name):")
+    # Retrieve stored values
+    text1 = get_local_storage("text1", "")
+    text2 = get_local_storage("text2", "")
+    text3 = get_local_storage("text3", "")
+    text4 = get_local_storage("text4", "")
 
-    if st.button("Get Temperature"):
-        if api_key and location:
-            temperature = get_weather(api_key, location)
-            if temperature is not None:
-                st.success(f"The current temperature in {location} is {temperature}°C.")
-        else:
-            st.error("Please enter both API key and location.")
+    col1, col2 = st.columns(2)
+
+    with col1:
+        text1 = st.text_input("Text Box 1", text1)
+        text3 = st.text_input("Text Box 3", text3)
+
+    with col2:
+        text2 = st.text_input("Text Box 2", text2)
+        text4 = st.text_input("Text Box 4", text4)
+
+    if st.button("Save"):
+        set_local_storage("text1", text1)
+        set_local_storage("text2", text2)
+        set_local_storage("text3", text3)
+        set_local_storage("text4", text4)
+        st.success("Text saved successfully!")
 
 if __name__ == "__main__":
     main()
