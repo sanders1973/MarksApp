@@ -6,10 +6,11 @@ def main():
     st.title("Text Boxes with Local Storage")
 
     # Retrieve stored values
-    text1 = get_local_storage("text1", "")
-    text2 = get_local_storage("text2", "")
-    text3 = get_local_storage("text3", "")
-    text4 = get_local_storage("text4", "")
+    
+    text1 = localS.getItem("text1")
+    text2 = localS.getItem("text2")
+    text3 = localS.getItem("text3")
+    text4 = localS.getItem("text4")
 
     col1, col2 = st.columns(2)
 
