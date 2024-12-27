@@ -22,10 +22,16 @@ def main():
         text2 = st.text_input("Text Box 2", text2)
         text4 = st.text_input("Text Box 4", text4)
 
-    if st.button("Save"):
+    if st.button("Save1"):
         localS.setItem("text1", text1)
+        st.success("Text saved successfully!")
+    if st.button("Save2"):   
         localS.setItem("text2", text2)
+        st.success("Text saved successfully!")
+     if st.button("Save3"):
         localS.setItem("text3", text3)
+        st.success("Text saved successfully!")
+    if st.button("Save4"):   
         localS.setItem("text4", text4)
         st.success("Text saved successfully!")
 
