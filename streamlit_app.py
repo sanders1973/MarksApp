@@ -1,5 +1,6 @@
 import streamlit as st
-from streamlit_local_storage import get_local_storage, set_local_storage
+from streamlit_local_storage import LocalStorage
+localS = LocalStorage()
 
 def main():
     st.title("Text Boxes with Local Storage")
