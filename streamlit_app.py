@@ -16,7 +16,7 @@ def main():
 
     with col1:
         text1 = st.text_area("Text Box 1", text1,height=300)
-        text3 = st.text_input("Text Box 3", text3)
+        text3 = st.text_area("Text Box 3", text1,height=300)
 
     with col2:
         text2 = st.text_input("Text Box 2", text2)
