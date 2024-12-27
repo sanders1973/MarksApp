@@ -6,7 +6,7 @@ def main():
     st.title("Text Boxes with Local Storage")
 
     # Retrieve stored values
-    localS.deleteAll()
+  
     text1 = localS.getItem("text1")
     text2 = localS.getItem("text2")
     text3 = localS.getItem("text3")
