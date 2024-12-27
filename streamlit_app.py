@@ -6,7 +6,7 @@ def main():
     st.title("Text Boxes with Local Storage")
 
     # Retrieve stored values
-    
+    localS.deleteAll()
     text1 = localS.getItem("text1")
     text2 = localS.getItem("text2")
     text3 = localS.getItem("text3")
@@ -28,7 +28,7 @@ def main():
     if st.button("Save2"):   
         localS.setItem("text2", text2)
         st.success("Text saved successfully!")
-     if st.button("Save3"):
+    if st.button("Save3"):
         localS.setItem("text3", text3)
         st.success("Text saved successfully!")
     if st.button("Save4"):   
