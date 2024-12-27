@@ -1,2 +1,2 @@
 streamlit
-LocalStorage
+streamlit_local_storage
