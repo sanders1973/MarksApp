@@ -23,10 +23,10 @@ def main():
         text4 = st.text_input("Text Box 4", text4)
 
     if st.button("Save"):
-        set_local_storage("text1", text1)
-        set_local_storage("text2", text2)
-        set_local_storage("text3", text3)
-        set_local_storage("text4", text4)
+        localS.setItem("text1", text1)
+        localS.setItem("text2", text2)
+        localS.setItem("text3", text3)
+        localS.setItem("text4", text4)
         st.success("Text saved successfully!")
 
 if __name__ == "__main__":
